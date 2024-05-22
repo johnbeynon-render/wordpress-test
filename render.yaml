@@ -11,28 +11,28 @@ services:
   envVars:
   - key: WORDPRESS_DB_HOST
     fromService:
-      name: mysql-wordpress
+      name: mysql-wordpress-sshtest
       type: pserv
       property: host
   - key: WORDPRESS_DB_NAME
     fromService:
-      name: mysql-wordpress
+      name: mysql-wordpress-sshtest
       type: pserv
       envVarKey: MYSQL_DATABASE
   - key: WORDPRESS_DB_USER
     fromService:
-      name: mysql-wordpress
+      name: mysql-wordpress-sshtest
       type: pserv
       envVarKey: MYSQL_USER
   - key: WORDPRESS_DB_PASSWORD
     fromService:
-      name: mysql-wordpress
+      name: mysql-wordpress-sshtest
       type: pserv
       envVarKey: MYSQL_PASSWORD
   - key: TAR_OPTIONS
     value: --no-same-owner
 - type: pserv
-  name: mysql-wordpress
+  name: mysql-wordpress-sshtest
   repo: https://github.com/render-examples/mysql.git
   env: docker
   plan: standard
